@@ -79,7 +79,7 @@ identical output.
 | INS-0001 | trend | Mehsana | high_risk_cases | 2026-08 | 28 | 11 | +154.5 | High |
 | INS-0012 | correlation | All districts | anc_coverage:high_risk_cases | 2026-07..2026-08 | r = −0.93 | – | – | Medium (low confidence) |
 
-## Limitations (please read)
+## Limitations 
 
 * **2 months × 6 districts = 12 rows.** Pearson correlations are statistically fragile (the assignment
   recommends ≥ 3 months and ≥ 10 districts). The engine says so in the UI, the insight text and the JSON.
