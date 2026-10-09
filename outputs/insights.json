@@ -1,0 +1,222 @@
+{
+  "config": {
+    "trend_threshold_pct": 10.0,
+    "outlier_method": "iqr",
+    "iqr_multiplier": 1.5,
+    "z_threshold": 3.0,
+    "corr_threshold": 0.7,
+    "min_districts_for_corr": 10,
+    "sev_medium_ratio": 1.25,
+    "sev_high_ratio": 1.75,
+    "corr_medium_frac": 0.3333,
+    "corr_high_frac": 0.6667,
+    "breach_scale_pct": 10.0,
+    "lower_is_better": [
+      "high_risk_cases"
+    ],
+    "targets": {}
+  },
+  "targets_used": {
+    "anc_coverage": 75.0,
+    "institutional_delivery": 75.0,
+    "immunization": 75.0,
+    "high_risk_cases": 15.0
+  },
+  "warnings": [],
+  "limitations": "Correlation is computed on pooled district-months. With few districts/months the coefficient is statistically fragile (two points always give r = +/-1). Treat flagged pairs as hypotheses to investigate, not conclusions. Correlation is not causation.",
+  "insight_count": 16,
+  "insights": [
+    {
+      "insight_id": "INS-0001",
+      "type": "trend",
+      "indicator": "high_risk_cases",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 28.0,
+      "prev_value": 11.0,
+      "change_pct": 154.5,
+      "severity": "High",
+      "explanation": "High Risk Cases in Mehsana rose by 154.5% compared to the previous month (11 -> 28), exceeding the 10% significant-change threshold; assessed as a deterioration."
+    },
+    {
+      "insight_id": "INS-0002",
+      "type": "trend",
+      "indicator": "anc_coverage",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 42.0,
+      "prev_value": 84.0,
+      "change_pct": -50.0,
+      "severity": "High",
+      "explanation": "ANC Coverage in Mehsana dropped by 50% compared to the previous month (84 -> 42), exceeding the 10% significant-change threshold; assessed as a deterioration."
+    },
+    {
+      "insight_id": "INS-0003",
+      "type": "trend",
+      "indicator": "high_risk_cases",
+      "entity": "Ahmedabad",
+      "period": "2026-08",
+      "value": 13.0,
+      "prev_value": 10.0,
+      "change_pct": 30.0,
+      "severity": "High",
+      "explanation": "High Risk Cases in Ahmedabad rose by 30% compared to the previous month (10 -> 13), exceeding the 10% significant-change threshold; assessed as a deterioration."
+    },
+    {
+      "insight_id": "INS-0004",
+      "type": "trend",
+      "indicator": "anc_coverage",
+      "entity": "Ahmedabad",
+      "period": "2026-08",
+      "value": 69.0,
+      "prev_value": 85.0,
+      "change_pct": -18.8,
+      "severity": "High",
+      "explanation": "ANC Coverage in Ahmedabad dropped by 18.8% compared to the previous month (85 -> 69), exceeding the 10% significant-change threshold; assessed as a deterioration."
+    },
+    {
+      "insight_id": "INS-0005",
+      "type": "trend",
+      "indicator": "high_risk_cases",
+      "entity": "Vadodara",
+      "period": "2026-08",
+      "value": 6.0,
+      "prev_value": 7.0,
+      "change_pct": -14.3,
+      "severity": "Medium",
+      "explanation": "High Risk Cases in Vadodara dropped by 14.3% compared to the previous month (7 -> 6), exceeding the 10% significant-change threshold; assessed as an improvement."
+    },
+    {
+      "insight_id": "INS-0006",
+      "type": "trend",
+      "indicator": "high_risk_cases",
+      "entity": "Bhavnagar",
+      "period": "2026-08",
+      "value": 15.0,
+      "prev_value": 17.0,
+      "change_pct": -11.8,
+      "severity": "Low",
+      "explanation": "High Risk Cases in Bhavnagar dropped by 11.8% compared to the previous month (17 -> 15), exceeding the 10% significant-change threshold; assessed as an improvement."
+    },
+    {
+      "insight_id": "INS-0007",
+      "type": "outlier",
+      "indicator": "anc_coverage",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 42.0,
+      "prev_value": 78.33,
+      "change_pct": -46.4,
+      "severity": "High",
+      "explanation": "Mehsana's ANC Coverage of 42 in 2026-08 is 46.4% below the pooled mean (78.33; 2.8σ) and lies below the lower IQR fence of 69.88 (multiplier 1.5; pooled median 80.5); n = 12 district-months. Flagged for review."
+    },
+    {
+      "insight_id": "INS-0008",
+      "type": "outlier",
+      "indicator": "high_risk_cases",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 28.0,
+      "prev_value": 13.42,
+      "change_pct": 108.7,
+      "severity": "High",
+      "explanation": "Mehsana's High Risk Cases of 28 in 2026-08 is 108.7% above the pooled mean (13.42; 2.6σ) and lies above the upper IQR fence of 21.38 (multiplier 1.5; pooled median 13); n = 12 district-months. Flagged for review."
+    },
+    {
+      "insight_id": "INS-0009",
+      "type": "outlier",
+      "indicator": "immunization",
+      "entity": "Vadodara",
+      "period": "2026-08",
+      "value": 97.0,
+      "prev_value": 91.58,
+      "change_pct": 5.9,
+      "severity": "Medium",
+      "explanation": "Vadodara's Immunization of 97 in 2026-08 is 5.9% above the pooled mean (91.58; 1.9σ) and lies above the upper IQR fence of 96 (multiplier 1.5; pooled median 91.5); n = 12 district-months. Flagged for review."
+    },
+    {
+      "insight_id": "INS-0010",
+      "type": "outlier",
+      "indicator": "anc_coverage",
+      "entity": "Ahmedabad",
+      "period": "2026-08",
+      "value": 69.0,
+      "prev_value": 78.33,
+      "change_pct": -11.9,
+      "severity": "Low",
+      "explanation": "Ahmedabad's ANC Coverage of 69 in 2026-08 is 11.9% below the pooled mean (78.33; 0.7σ) and lies below the lower IQR fence of 69.88 (multiplier 1.5; pooled median 80.5); n = 12 district-months. Flagged for review."
+    },
+    {
+      "insight_id": "INS-0011",
+      "type": "correlation",
+      "indicator": "institutional_delivery:immunization",
+      "entity": "All districts",
+      "period": "2026-07..2026-08",
+      "value": 0.98,
+      "prev_value": null,
+      "change_pct": null,
+      "severity": "Medium",
+      "explanation": "Institutional Delivery and Immunization are strongly positively correlated (Pearson r = 0.98, n = 12 district-months across 6 districts, p < 0.001), above the |r| >= 0.7 threshold. LOW CONFIDENCE: only 6 districts (<10 recommended). Dropping the most influential district (Bhavnagar) gives r = 0.97. Correlation does not imply causation."
+    },
+    {
+      "insight_id": "INS-0012",
+      "type": "correlation",
+      "indicator": "anc_coverage:high_risk_cases",
+      "entity": "All districts",
+      "period": "2026-07..2026-08",
+      "value": -0.93,
+      "prev_value": null,
+      "change_pct": null,
+      "severity": "Medium",
+      "explanation": "ANC Coverage and High Risk Cases are strongly negatively correlated (Pearson r = -0.93, n = 12 district-months across 6 districts, p < 0.001), above the |r| >= 0.7 threshold. LOW CONFIDENCE: only 6 districts (<10 recommended). Dropping the most influential district (Mehsana) gives r = -0.78. Correlation does not imply causation."
+    },
+    {
+      "insight_id": "INS-0013",
+      "type": "threshold_breach",
+      "indicator": "high_risk_cases",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 28.0,
+      "prev_value": 15.0,
+      "change_pct": 86.7,
+      "severity": "High",
+      "explanation": "Mehsana's High Risk Cases of 28 in 2026-08 is above the maximum target of 15 (86.7% over)."
+    },
+    {
+      "insight_id": "INS-0014",
+      "type": "threshold_breach",
+      "indicator": "anc_coverage",
+      "entity": "Mehsana",
+      "period": "2026-08",
+      "value": 42.0,
+      "prev_value": 75.0,
+      "change_pct": -44.0,
+      "severity": "High",
+      "explanation": "Mehsana's ANC Coverage of 42 in 2026-08 is below the minimum target of 75 (44% short)."
+    },
+    {
+      "insight_id": "INS-0015",
+      "type": "threshold_breach",
+      "indicator": "high_risk_cases",
+      "entity": "Bhavnagar",
+      "period": "2026-07",
+      "value": 17.0,
+      "prev_value": 15.0,
+      "change_pct": 13.3,
+      "severity": "Medium",
+      "explanation": "Bhavnagar's High Risk Cases of 17 in 2026-07 is above the maximum target of 15 (13.3% over)."
+    },
+    {
+      "insight_id": "INS-0016",
+      "type": "threshold_breach",
+      "indicator": "anc_coverage",
+      "entity": "Ahmedabad",
+      "period": "2026-08",
+      "value": 69.0,
+      "prev_value": 75.0,
+      "change_pct": -8.0,
+      "severity": "Low",
+      "explanation": "Ahmedabad's ANC Coverage of 69 in 2026-08 is below the minimum target of 75 (8% short)."
+    }
+  ]
+}
